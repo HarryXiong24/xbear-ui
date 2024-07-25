@@ -1,0 +1,46 @@
+@import '../../styles/mixin';
+@import '../../styles/variables';
+@import '../../styles/reboot';
+
+.xbear-message {
+  position: fixed;
+  top: 10vh;
+  left: 50vw;
+  transform: translateX(-50%);
+
+  &-wrapper {
+    z-index: 9999999999;
+    min-width: 260px;
+    height: 40px;
+    overflow: hidden;
+    background-color: $white;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-sm;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+
+    > span {
+      display: flex;
+      align-items: center;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &-open {
+    animation: chocolate-fade-in $animate-time $animate-type forwards;
+    pointer-events: auto;
+  }
+
+  &-close {
+    animation: chocolate-fade-out $animate-time $animate-type forwards;
+    pointer-events: none;
+  }
+}
