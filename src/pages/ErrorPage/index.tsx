@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const NoMatch = () => {
+const ErrorPage = () => {
   return (
     <div>
       <h2>It looks like you are lost...</h2>
@@ -11,4 +11,4 @@ const NoMatch = () => {
   );
 };
 
-export default NoMatch;
+export default ErrorPage;
