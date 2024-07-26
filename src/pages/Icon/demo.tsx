@@ -8,10 +8,7 @@ import Tabs from '@/components/Tabs';
 import '@/styles/example.scss';
 
 // Icon 构造器
-const BuildIcons: React.FC<{ theme: ThemeProps; icons: any }> = ({
-  theme,
-  icons,
-}) => {
+const BuildIcons: React.FC<{ theme: ThemeProps; icons: any }> = ({ theme, icons }) => {
   const style =
     theme === 'light'
       ? {
@@ -40,8 +37,8 @@ const BuildIcons: React.FC<{ theme: ThemeProps; icons: any }> = ({
             const _length = iconName.split('-').length;
             return (
               <li
-                role="presentation"
-                className="svgCls"
+                role='presentation'
+                className='svgCls'
                 style={{
                   display: 'inline-flex',
                   flexDirection: 'row',
@@ -77,16 +74,7 @@ const BuildIcons: React.FC<{ theme: ThemeProps; icons: any }> = ({
   );
 };
 
-const ThemeArr: ThemeProps[] = [
-  'primary',
-  'secondary',
-  'success',
-  'info',
-  'warning',
-  'danger',
-  'light',
-  'dark',
-];
+const ThemeArr: ThemeProps[] = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 
 const IconDemo = () => {
   const [mode, setMode] = useState<ThemeProps>('primary');
@@ -95,9 +83,7 @@ const IconDemo = () => {
   };
   return (
     <>
-      <h6 style={{ marginTop: 20 }}>
-        一共支持 {Object.keys(iconsCache).slice(0, 256).length} 种图标{' '}
-      </h6>
+      <h6 style={{ marginTop: 20 }}>一共支持 {Object.keys(iconsCache).slice(0, 256).length} 种图标 </h6>
       <p style={{ marginTop: 20 }}>有 8 种颜色模式可以选择</p>
       <div
         style={{
@@ -107,7 +93,7 @@ const IconDemo = () => {
         }}
       >
         <Tabs
-          type="card"
+          type='card'
           defaultIndex={0}
           onSelect={(selectedIndex) => {
             changeMode(ThemeArr[selectedIndex]);

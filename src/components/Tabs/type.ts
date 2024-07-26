@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface TabsProps {
   // 当前激活 tab 面板的 index，默认为0
   defaultIndex?: number;
@@ -7,6 +9,7 @@ export interface TabsProps {
   onSelect?: (selectedIndex: number) => void;
   // Tabs 的样式，两种可选，默认为 line
   type?: 'line' | 'card';
+  children?: ReactNode;
 }
 
 export interface TabItemProps {
@@ -16,4 +19,5 @@ export interface TabItemProps {
   disabled?: boolean;
   // 自定义 ref
   myRef?: React.Ref<any>;
+  children?: ReactNode;
 }

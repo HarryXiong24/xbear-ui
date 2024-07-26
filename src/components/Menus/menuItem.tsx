@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { ReactNode, useContext } from 'react';
 import classNames from 'classnames';
 import { MenuContext } from './menu';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -20,6 +20,7 @@ export interface MenuItemProps {
    * 图标主题
    */
   theme?: ThemeProps;
+  children?: ReactNode;
 }
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
@@ -37,15 +38,8 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
   };
 
   return (
-    <li
-      role="presentation"
-      className={classes}
-      style={style}
-      onClick={handleClick}
-    >
-      {icon ? (
-        <Icon icon={icon} theme={theme} style={{ marginRight: 5 }} />
-      ) : null}
+    <li role='presentation' className={classes} style={style} onClick={handleClick}>
+      {icon ? <Icon icon={icon} theme={theme} style={{ marginRight: 5 }} /> : null}
       {children}
     </li>
   );

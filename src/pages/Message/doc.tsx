@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Card from '@/components/Card';
 import rehypeHighlight from 'rehype-highlight';
@@ -9,12 +8,7 @@ import '@/styles/example.scss';
 const MessageDoc = () => {
   return (
     <Card>
-      <ReactMarkdown
-        rehypePlugins={[rehypeHighlight]}
-        remarkPlugins={[remarkGfm]}
-        // eslint-disable-next-line react/no-children-prop
-        children={MessageMD}
-      />
+      <ReactMarkdown rehypePlugins={[rehypeHighlight]} remarkPlugins={[remarkGfm]} children={MessageMD} />
     </Card>
   );
 };

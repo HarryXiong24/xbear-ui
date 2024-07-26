@@ -4,7 +4,7 @@ interface Action {
   // action 名
   name: string;
   // action 对应的点击事件
-  event?: () => any;
+  event?: () => void;
 }
 
 export interface CardProps {
@@ -27,4 +27,5 @@ export interface CardProps {
   // 卡片按钮
   actions?: Action[];
   // loading?: boolean;
+  children?: ReactNode;
 }

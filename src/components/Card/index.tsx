@@ -1,11 +1,10 @@
-import { FC } from "react";
-import classnames from "classnames";
-import { CardProps } from "./type";
-import "./style.scss";
-import "@/styles";
+import classnames from 'classnames';
+import { CardProps } from './type';
+import './style.scss';
+import '@/styles';
 
-export const Card: FC<CardProps> = (props) => {
-  const prefixCls = "xbear-card";
+export const Card = (props: CardProps) => {
+  const prefixCls = 'xbear-card';
   const {
     title,
     cover,
@@ -48,22 +47,14 @@ export const Card: FC<CardProps> = (props) => {
               {title}
             </div>
           )}
-          {extra && (
-            <div className={classnames(`${prefixCls}-header-extra`)}>
-              {extra}
-            </div>
-          )}
+          {extra && <div className={classnames(`${prefixCls}-header-extra`)}>{extra}</div>}
         </div>
       )}
       <div className={classnames(`${prefixCls}-content`)}>{children}</div>
       {actions && actions.length >= 1 && (
         <div className={classnames(`${prefixCls}-actions`)}>
           {actions.map((action, key) => (
-            <div
-              key={key}
-              className={classnames(`${prefixCls}-actions-item`)}
-              onClick={action.event}
-            >
+            <div key={key} className={classnames(`${prefixCls}-actions-item`)} onClick={action.event}>
               {action.name}
             </div>
           ))}

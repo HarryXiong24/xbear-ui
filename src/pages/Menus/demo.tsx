@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from '@/components/Card';
 import '@/styles/example.scss';
 import Menu from '@/components/Menus/menu';
@@ -8,9 +7,9 @@ import SubMenu from '@/components/Menus/subMenu';
 const MenusDemo = () => {
   const cardCss = { margin: '20px 20px 0 0' };
   return (
-    <div className="container">
-      <div className="item">
-        <Card title="水平导航" style={cardCss} shadow>
+    <div className='container'>
+      <div className='item'>
+        <Card title='水平导航' style={cardCss} shadow>
           <Menu>
             <MenuItem>菜单 1</MenuItem>
             <MenuItem>菜单 2</MenuItem>
@@ -19,22 +18,22 @@ const MenusDemo = () => {
         </Card>
       </div>
 
-      <div className="item">
-        <Card title="垂直导航" style={cardCss} shadow>
-          <Menu mode="vertical">
+      <div className='item'>
+        <Card title='垂直导航' style={cardCss} shadow>
+          <Menu mode='vertical'>
             <MenuItem>菜单 1</MenuItem>
             <MenuItem>菜单 2</MenuItem>
             <MenuItem>菜单 3</MenuItem>
           </Menu>
         </Card>
       </div>
-      <div className="item">
-        <Card title="内嵌水平导航" style={cardCss} shadow>
-          <Menu mode="horizontal">
+      <div className='item'>
+        <Card title='内嵌水平导航' style={cardCss} shadow>
+          <Menu mode='horizontal'>
             <MenuItem>菜单 1</MenuItem>
             <MenuItem>菜单 2</MenuItem>
             <MenuItem>菜单 3</MenuItem>
-            <SubMenu title="菜单 4">
+            <SubMenu title='菜单 4'>
               <MenuItem>子菜单项 1</MenuItem>
               <MenuItem>子菜单项 2</MenuItem>
               <MenuItem>子菜单项 3</MenuItem>
@@ -42,13 +41,13 @@ const MenusDemo = () => {
           </Menu>
         </Card>
       </div>
-      <div className="item">
-        <Card title="内嵌垂直导航" style={cardCss} shadow>
-          <Menu mode="vertical">
+      <div className='item'>
+        <Card title='内嵌垂直导航' style={cardCss} shadow>
+          <Menu mode='vertical'>
             <MenuItem>菜单 1</MenuItem>
             <MenuItem>菜单 2</MenuItem>
             <MenuItem>菜单 3</MenuItem>
-            <SubMenu title="菜单 4">
+            <SubMenu title='菜单 4'>
               <MenuItem>子菜单项 1</MenuItem>
               <MenuItem>子菜单项 2</MenuItem>
               <MenuItem>子菜单项 3</MenuItem>
@@ -57,13 +56,13 @@ const MenusDemo = () => {
         </Card>
       </div>
 
-      <div className="item">
-        <Card title="默认选中" style={cardCss} shadow>
-          <Menu mode="horizontal" defaultIndex={'2'}>
+      <div className='item'>
+        <Card title='默认选中' style={cardCss} shadow>
+          <Menu mode='horizontal' defaultIndex={'2'}>
             <MenuItem>菜单 1</MenuItem>
             <MenuItem>菜单 2</MenuItem>
             <MenuItem>菜单 3</MenuItem>
-            <SubMenu title="菜单 4">
+            <SubMenu title='菜单 4'>
               <MenuItem>子菜单项 1</MenuItem>
               <MenuItem>子菜单项 2</MenuItem>
               <MenuItem>子菜单项 3</MenuItem>
@@ -71,13 +70,13 @@ const MenusDemo = () => {
           </Menu>
         </Card>
       </div>
-      <div className="item">
-        <Card title="Icon导航" style={cardCss} shadow>
+      <div className='item'>
+        <Card title='Icon导航' style={cardCss} shadow>
           <Menu>
-            <MenuItem icon="address-book">菜单 1</MenuItem>
-            <MenuItem icon="calculator">菜单 2</MenuItem>
-            <MenuItem icon="chalkboard">菜单 3</MenuItem>
-            <SubMenu icon="chart-pie" title="菜单 4">
+            <MenuItem icon='address-book'>菜单 1</MenuItem>
+            <MenuItem icon='calculator'>菜单 2</MenuItem>
+            <MenuItem icon='chalkboard'>菜单 3</MenuItem>
+            <SubMenu icon='chart-pie' title='菜单 4'>
               <MenuItem>子菜单项 1</MenuItem>
               <MenuItem>子菜单项 2</MenuItem>
               <MenuItem>子菜单项 3</MenuItem>
@@ -85,13 +84,13 @@ const MenusDemo = () => {
           </Menu>
         </Card>
       </div>
-      <div className="item">
-        <Card title="默认展开内嵌导航" style={cardCss} shadow>
-          <Menu mode="vertical" defaultOpenSubMenus={['3']}>
+      <div className='item'>
+        <Card title='默认展开内嵌导航' style={cardCss} shadow>
+          <Menu mode='vertical' defaultOpenSubMenus={['3']}>
             <MenuItem>菜单 1</MenuItem>
             <MenuItem>菜单 2</MenuItem>
             <MenuItem>菜单 3</MenuItem>
-            <SubMenu title="菜单 4">
+            <SubMenu title='菜单 4'>
               <MenuItem>子菜单项 1</MenuItem>
               <MenuItem>子菜单项 2</MenuItem>
               <MenuItem>子菜单项 3</MenuItem>

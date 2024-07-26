@@ -1,7 +1,7 @@
-import React, { FC, useImperativeHandle } from "react";
-import { TabItemProps } from "./type";
+import { useImperativeHandle } from 'react';
+import { TabItemProps } from './type';
 
-const TabItem: FC<TabItemProps> = (props) => {
+const TabItem = (props: TabItemProps) => {
   const { children, myRef } = props;
 
   const showContent = () => {

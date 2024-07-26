@@ -1,6 +1,6 @@
-@import "../../styles/mixin";
-@import "../../styles/variables";
-@import "../../styles/reboot";
+@import '@/styles/mixin';
+@import '@/styles/variables';
+@import '@/styles/reboot';
 
 .xbear-tabs {
   &-nav {
@@ -29,8 +29,7 @@
 
       &.is-active {
         color: $menu-item-active-color;
-        border-bottom: $menu-item-active-border-width solid
-          $menu-item-active-color;
+        border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
       }
 
       &:hover {

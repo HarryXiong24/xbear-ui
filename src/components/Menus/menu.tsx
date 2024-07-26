@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, ReactNode, useState } from 'react';
 import classNames from 'classnames';
 import { MenuItemProps } from './menuItem';
 import './style.scss';
@@ -12,6 +12,7 @@ export interface MenuProps {
   style?: React.CSSProperties;
   onSelect?: (selectedIndex: string) => void;
   defaultOpenSubMenus?: string[];
+  children?: ReactNode;
 }
 
 interface IMenuContext {
@@ -23,16 +24,8 @@ interface IMenuContext {
 
 export const MenuContext = createContext<IMenuContext>({ index: '0' });
 
-export const Menu: React.FC<MenuProps> = (props) => {
-  const {
-    className,
-    mode,
-    style,
-    children,
-    defaultIndex,
-    onSelect,
-    defaultOpenSubMenus,
-  } = props;
+export const Menu = (props: MenuProps) => {
+  const { className, mode, style, children, defaultIndex, onSelect, defaultOpenSubMenus } = props;
   const [currentActive, setActive] = useState(defaultIndex);
 
   const classes = classNames('xbear-menu', className, {
@@ -53,25 +46,20 @@ export const Menu: React.FC<MenuProps> = (props) => {
 
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {
-      const childElement =
-        child as React.FunctionComponentElement<MenuItemProps>;
+      const childElement = child as React.FunctionComponentElement<MenuItemProps>;
       const { displayName } = childElement.type;
       if (displayName === 'MenuItem' || displayName === 'SubMenu') {
         return React.cloneElement(childElement, {
           index: index.toString(),
         });
       } else {
-        console.error(
-          'Warning: Menu has a child which is not a MenuItem component'
-        );
+        console.error('Warning: Menu has a child which is not a MenuItem component');
       }
     });
   };
   return (
-    <ul className={classes} style={style} data-testid="test-menu">
-      <MenuContext.Provider value={passedContext}>
-        {renderChildren()}
-      </MenuContext.Provider>
+    <ul className={classes} style={style} data-testid='test-menu'>
+      <MenuContext.Provider value={passedContext}>{renderChildren()}</MenuContext.Provider>
     </ul>
   );
 };

@@ -1,12 +1,8 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { CSSTransitionProps } from 'react-transition-group/CSSTransition';
 
-type AnimationName =
-  | 'zoom-in-top'
-  | 'zoom-in-left'
-  | 'zoom-in-bottom'
-  | 'zoom-in-right';
+type AnimationName = 'zoom-in-top' | 'zoom-in-left' | 'zoom-in-bottom' | 'zoom-in-right';
 
 // interface TransitionProps extends CSSTransitionProps {
 //   animation?: AnimationName,
@@ -16,11 +12,11 @@ type AnimationName =
 type TransitionProps = CSSTransitionProps & {
   animation?: AnimationName;
   wrapper?: boolean;
+  children?: ReactNode;
 };
 
-const Transition: React.FC<TransitionProps> = (props) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { children, classNames, animation, wrapper, ...restProps } = props;
+const Transition = (props: TransitionProps) => {
+  const { children, animation, wrapper, ...restProps } = props;
   return (
     <CSSTransition classNames={animation} {...restProps}>
       {wrapper ? <div>{children}</div> : children}

@@ -1061,13 +1061,7 @@ const faBookReader = {
 const faBookmark = {
   prefix: 'fas',
   iconName: 'bookmark',
-  icon: [
-    384,
-    512,
-    [],
-    'f02e',
-    'M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z',
-  ],
+  icon: [384, 512, [], 'f02e', 'M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z'],
 };
 const faBorderAll = {
   prefix: 'fas',
@@ -2062,13 +2056,7 @@ const faChurch = {
 const faCircle = {
   prefix: 'fas',
   iconName: 'circle',
-  icon: [
-    512,
-    512,
-    [],
-    'f111',
-    'M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z',
-  ],
+  icon: [512, 512, [], 'f111', 'M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z'],
 };
 const faCircleNotch = {
   prefix: 'fas',
@@ -3162,13 +3150,7 @@ const faEdit = {
 const faEgg = {
   prefix: 'fas',
   iconName: 'egg',
-  icon: [
-    384,
-    512,
-    [],
-    'f7fb',
-    'M192 0C86 0 0 214 0 320s86 192 192 192 192-86 192-192S298 0 192 0z',
-  ],
+  icon: [384, 512, [], 'f7fb', 'M192 0C86 0 0 214 0 320s86 192 192 192 192-86 192-192S298 0 192 0z'],
 };
 const faEject = {
   prefix: 'fas',

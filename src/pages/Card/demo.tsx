@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from '@/components/Card';
 import Button from '@/components/Button';
 import '@/styles/example.scss';
@@ -6,9 +5,9 @@ import '@/styles/example.scss';
 const CardDemo = () => {
   const cardCss = { margin: '20px 20px 0 0' };
   return (
-    <div className="container">
+    <div className='container'>
       <Card
-        title="基本使用"
+        title='基本使用'
         shadow
         style={cardCss}
         titleOverflowHidden={false}
@@ -17,13 +16,13 @@ const CardDemo = () => {
         <h1>I am Card!</h1>
       </Card>
       <Card
-        title="title 右边自定义 Node 元素"
+        title='title 右边自定义 Node 元素'
         shadow
         style={cardCss}
         extra={
           <div>
             <Button
-              btnType="ghost"
+              btnType='ghost'
               onClick={() => {
                 alert('I was clicked!');
               }}
@@ -36,7 +35,7 @@ const CardDemo = () => {
         <h1>I am Card!</h1>
       </Card>
       <Card
-        title="卡片带按钮"
+        title='卡片带按钮'
         shadow
         actions={[
           {
@@ -53,7 +52,7 @@ const CardDemo = () => {
       >
         <h1>I am Card!</h1>
       </Card>
-      <Card title="悬浮出现卡片阴影" showShadowWhenHover style={cardCss}>
+      <Card title='悬浮出现卡片阴影' showShadowWhenHover style={cardCss}>
         <h1>I am Card!</h1>
       </Card>
     </div>

@@ -1,8 +1,8 @@
-import Button from "@/pages/Button";
+import Button from '@/pages/Button';
 
 export const router = [
   {
-    path: "/",
+    path: '/',
     element: <Button></Button>,
   },
 ];

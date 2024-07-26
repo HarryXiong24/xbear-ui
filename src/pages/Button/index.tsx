@@ -1,17 +1,17 @@
-import Tabs from "@/components/Tabs";
-import ButtonDemo from "./demo";
-// import ButtonDoc from "./doc";
-import "@/styles/example.scss";
+import Tabs from '@/components/Tabs';
+import ButtonDemo from './demo';
+import ButtonDoc from './doc';
+import '@/styles/example.scss';
 
 const ButtonPage = () => {
   return (
-    <Tabs type="line" defaultIndex={0}>
-      <Tabs.Item label="Demo">
+    <Tabs type='line' defaultIndex={0}>
+      <Tabs.Item label='Demo'>
         <ButtonDemo />
       </Tabs.Item>
-      {/* <Tabs.Item label="API">
+      <Tabs.Item label='API'>
         <ButtonDoc />
-      </Tabs.Item> */}
+      </Tabs.Item>
     </Tabs>
   );
 };
