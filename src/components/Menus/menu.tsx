@@ -2,7 +2,7 @@ import React, { createContext, ReactNode, useState } from 'react';
 import classNames from 'classnames';
 import { MenuItemProps } from './menuItem';
 import './style.scss';
-import '@/styles';
+import '@/styles/index.scss';
 
 type MenuMode = 'horizontal' | 'vertical';
 export interface MenuProps {

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProps, ThemeProps } from './type';
 import './style.scss';
-import '@/styles';
+import '@/styles/index.scss';
 
 export const Icon = (props: IconProps) => {
   // CSS 前缀名

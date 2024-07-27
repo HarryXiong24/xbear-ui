@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const ErrorPage = () => {
+const Error = () => {
   return (
     <div>
       <h2>It looks like you are lost...</h2>
@@ -11,4 +11,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default Error;

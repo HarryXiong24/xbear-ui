@@ -3,7 +3,7 @@ import TabWrap from './tabWrap';
 import TabItem from './tabItem';
 import { TabsProps, TabItemProps } from './type';
 import './style.scss';
-import '@/styles';
+import '@/styles/index.scss';
 
 export type TabsComponent = FC<TabsProps> & {
   Item: FC<TabItemProps>;

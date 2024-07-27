@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import './index.scss';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { router } from './routes/index.tsx';
 

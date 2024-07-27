@@ -5,7 +5,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import Icon from '../Icon';
 import { ThemeProps } from '../Icon/type';
 import './style.scss';
-import '@/styles';
+import '@/styles/index.scss';
 
 export interface MenuItemProps {
   index?: string;

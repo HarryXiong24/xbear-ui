@@ -1,10 +1,9 @@
-@import '@/styles';
+@import '@/styles/index.scss';
 
 .xbear-menu {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 30px;
   list-style: none;
   border-bottom: $menu-border-width solid $menu-border-color;
   min-width: max-content;

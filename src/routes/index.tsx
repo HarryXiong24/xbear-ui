@@ -1,33 +1,44 @@
-import App from '@/App';
+import App from '@/app';
 import Card from '@/pages/Card';
 import Button from '@/pages/Button';
-import ErrorPage from '@/pages/ErrorPage';
+import Error from '@/pages/Error';
+import ErrorForward from '@/utils/error-forward';
 
 export const router = [
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorForward />,
     children: [
       {
         name: 'Button',
         path: '/button',
         element: <Button />,
-        index: true,
       },
       {
         name: 'Card',
         path: '/card',
         element: <Card />,
       },
+      {
+        name: 'Error',
+        path: '/error',
+        element: <Error />,
+      },
     ],
   },
 ];
 
-export const sider = router[0].children.map((item, index) => {
-  return {
-    name: item.name,
-    id: index,
-    path: item.path,
-  };
-});
+export const sider = router[0].children
+  .filter((item) => !item.name?.startsWith('Error'))
+  .map((item, index) => {
+    return {
+      name: item.name,
+      id: index,
+      path: item.path,
+    };
+  }) as {
+  name: string;
+  id: number;
+  path: string;
+}[];

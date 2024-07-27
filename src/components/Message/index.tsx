@@ -6,7 +6,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { ThemeProps } from '../Icon/type';
 import { IconType, MessageProps, MessageType, ShowProps } from './type';
 import './style.scss';
-import '@/styles/index';
+import '@/styles/index.scss';
 
 export function Message(props: MessageProps) {
   const prefixCls = 'xbear-message';

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { scopedClass } from '../../utils/scopedClass';
+import { scopedClass } from '../../utils/scoped-class';
 import { TabsProps, TabItemProps } from './type';
 import './style.scss';
-import '@/styles';
+import '@/styles/index.scss';
 
 // 生成构造作用域函数
 const scFunc = scopedClass('xbear-tabs');

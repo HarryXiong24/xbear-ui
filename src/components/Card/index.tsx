@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import { CardProps } from './type';
 import './style.scss';
-import '@/styles';
+import '@/styles/index.scss';
 
 export const Card = (props: CardProps) => {
   const prefixCls = 'xbear-card';

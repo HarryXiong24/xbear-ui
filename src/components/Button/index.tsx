@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Icon from '../Icon';
 import { ButtonProps, ButtonSize, ButtonType } from './type';
 import './style.scss';
-import '@/styles';
+import '@/styles/index.scss';
 
 const defaultProps: ButtonProps = {
   className: '',
