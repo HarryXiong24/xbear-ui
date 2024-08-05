@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ErrorForward = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate('/error');
-  }, [navigate]);
-
-  return <div></div>;
+  return (
+    <div style={{ padding: 24 }}>
+      <h2>It looks like you are lost...</h2>
+      <p>
+        <Link to='/'>Go to the home page</Link>
+      </p>
+    </div>
+  );
 };
 
 export default ErrorForward;

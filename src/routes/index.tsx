@@ -1,8 +1,14 @@
 import App from '@/app';
-import Card from '@/pages/Card';
-import Button from '@/pages/Button';
-import Error from '@/pages/Error';
+// import Card from '@/pages/Card';
+// import Button from '@/pages/Button';
 import ErrorForward from '@/utils/error-forward';
+import { lazy } from 'react';
+
+// 懒加载组件
+// eslint-disable-next-line react-refresh/only-export-components
+const Button = lazy(() => import('@/pages/Button'));
+// eslint-disable-next-line react-refresh/only-export-components
+const Card = lazy(() => import('@/pages/Card'));
 
 export const router = [
   {
@@ -20,24 +26,17 @@ export const router = [
         path: '/card',
         element: <Card />,
       },
-      {
-        name: 'Error',
-        path: '/error',
-        element: <Error />,
-      },
     ],
   },
 ];
 
-export const sider = router[0].children
-  .filter((item) => !item.name?.startsWith('Error'))
-  .map((item, index) => {
-    return {
-      name: item.name,
-      id: index,
-      path: item.path,
-    };
-  }) as {
+export const sider = router[0].children.map((item, index) => {
+  return {
+    name: item.name,
+    id: index,
+    path: item.path,
+  };
+}) as {
   name: string;
   id: number;
   path: string;
