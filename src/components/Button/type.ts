@@ -22,9 +22,9 @@ export interface BaseButtonProps {
   // 设置按钮大小
   size?: ButtonSize;
   // 设置按钮类型
-  btnType?: ButtonType;
+  type?: ButtonType;
   // 按钮里的子元素
-  children: React.ReactNode;
+  children?: React.ReactNode;
   // 设置 link 类型按钮的跳转链接
   href?: string;
   // 添加图标到标题后
@@ -32,13 +32,13 @@ export interface BaseButtonProps {
   // 图标主题
   theme?: ThemeProps;
   // 设置加载状态
-  loading?: boolean;
+  loading: boolean;
   // 是否为圆形
-  circle?: boolean;
+  circle: boolean;
 }
 
-type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;
-type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
+type NativeButtonProps = BaseButtonProps & Omit<ButtonHTMLAttributes<HTMLElement>, 'type'>;
+type AnchorButtonProps = BaseButtonProps & Omit<AnchorHTMLAttributes<HTMLElement>, 'type'>;
 
 // 需要联合原生的 Button 类型和 link 的类型
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;

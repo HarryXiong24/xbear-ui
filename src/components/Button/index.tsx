@@ -5,36 +5,33 @@ import './style.scss';
 import '@/styles/index.scss';
 
 const defaultProps: ButtonProps = {
-  className: '',
+  className: undefined,
   disabled: false,
   size: 'sm',
-  btnType: 'default',
-  href: '',
+  type: 'default',
+  href: undefined,
+  children: undefined,
+  icon: undefined,
+  theme: undefined,
+  loading: false,
+  circle: false,
 };
 
 export const Button = (props: ButtonProps = defaultProps) => {
   const prefixCls = 'xbear-btn';
-  const { btnType, className, disabled, size, children, href, icon, theme, loading, circle, ...restProps } = props;
+  const { type, className, disabled, size, children, href, icon, theme, loading, circle, ...restProps } = props;
 
   const classes = classNames(prefixCls, className, {
-    [`${prefixCls}-${btnType as ButtonType}`]: btnType,
-    [`${prefixCls}-${size as ButtonSize}`]: size,
+    [`${prefixCls}-${type as ButtonType}`]: type,
+    [`${prefixCls}-${size as ButtonSize}`]: size && !circle,
+    [`${prefixCls}-circle-${size as ButtonSize}`]: size && circle,
     [`${prefixCls}-loading`]: loading,
-    [`${prefixCls}-circle`]: circle,
+    [`${prefixCls}-circle`]: !!circle,
     // 因为原生 a 标签里面没有 disabled 属性，所以对于 link 类型，我们手动实现 disabled 属性
-    disabled: btnType === 'link' && disabled,
+    disabled: type === 'link' && disabled,
   });
 
-  const classes_circle = classNames(prefixCls, className, {
-    [`${prefixCls}-${btnType as ButtonType}`]: btnType,
-    [`${prefixCls}-circle-${size as ButtonSize}`]: size,
-    [`${prefixCls}-loading`]: loading,
-    // [`${prefixCls}-circle`]: circle,
-    // 因为原生 a 标签里面没有 disabled 属性，所以对于 link 类型，我们手动实现 disabled 属性
-    disabled: btnType === 'link' && disabled,
-  });
-
-  if (btnType === 'link' && href) {
+  if (type === 'link' && href) {
     return (
       <a className={classes} href={href} {...restProps}>
         {children}
@@ -42,7 +39,7 @@ export const Button = (props: ButtonProps = defaultProps) => {
     );
   } else if (circle) {
     return (
-      <button className={classes_circle} disabled={disabled} {...restProps}>
+      <button className={classes} disabled={disabled} {...restProps}>
         <Icon icon={icon!} theme={theme} style={{ width: '1rem', height: '1rem' }} />
       </button>
     );

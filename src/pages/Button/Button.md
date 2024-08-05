@@ -8,7 +8,7 @@
 
 | 属性        | 说明                         | 类型         | 默认值    | 版本 |     |
 | ----------- | ---------------------------- | ------------ | --------- | ---- | --- |
-| `btnType`   | 设置按钮类型                 | `ButtonType` | ’primary‘ |      |     |
+| `type`      | 设置按钮类型                 | `ButtonType` | ’primary‘ |      |     |
 | `size`      | 设置按钮大小                 | `ButtonSize` | ’sm‘      |      |     |
 | `href`      | 设置 link 类型按钮的跳转链接 | `string`     | ’‘        |      |     |
 | `circle`    | 是否为圆形                   | `boolean`    | false     |      |     |

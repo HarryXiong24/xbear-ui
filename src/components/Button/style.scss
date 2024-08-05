@@ -80,15 +80,15 @@
 }
 
 .xbear-btn-circle-lg {
-  width: 3rem;
-  height: 3rem;
+  width: $btn-circle-lg;
+  height: $btn-circle-lg;
   border-radius: 50%;
   margin: 0 auto;
 }
 
 .xbear-btn-circle-sm {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: $btn-circle-sm;
+  height: $btn-circle-sm;
   border-radius: 50%;
   margin: 0 auto;
 }
