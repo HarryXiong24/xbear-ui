@@ -6,9 +6,9 @@ import { lazy } from 'react';
 
 // 懒加载组件
 // eslint-disable-next-line react-refresh/only-export-components
-const Button = lazy(() => import('@/pages/Button'));
+const Button = lazy(() => import('@/pages/button'));
 // eslint-disable-next-line react-refresh/only-export-components
-const Card = lazy(() => import('@/pages/Card'));
+const Card = lazy(() => import('@/pages/card'));
 
 export const router = [
   {

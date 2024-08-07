@@ -1,4 +1,4 @@
-import Card from '@/components/Card';
+import Card from '@/components/card';
 import '@/styles/example.scss';
 import Menu from '@/components/Menus/menu';
 import MenuItem from '@/components/Menus/menuItem';

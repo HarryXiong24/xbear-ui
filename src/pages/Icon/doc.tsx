@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown';
-import Card from '@/components/Card';
+import Card from '@/components/card';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
 import IconMD from './Icon.md';

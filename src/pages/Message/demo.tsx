@@ -1,6 +1,6 @@
-import Card from '@/components/Card';
+import Card from '@/components/card';
 import { Message } from '@/components/Message';
-import Button from '@/components/Button';
+import Button from '@/components/buttom';
 import '@/styles/example.scss';
 
 const MessageDemo = () => {

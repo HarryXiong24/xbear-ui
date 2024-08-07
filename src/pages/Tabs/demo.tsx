@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import Tabs from '@/components/Tabs';
 import Icon from '@/components/Icon';
-import Card from '@/components/Card';
+import Card from '@/components/card';
 import { Description1, Description2, Description3 } from './poem';
 import '@/styles/example.scss';
-import Button from '@/components/Button';
+import Button from '@/components/buttom';
 
 const TabsDemo = () => {
   const cardCss = { margin: '20px 20px 0 0' };
