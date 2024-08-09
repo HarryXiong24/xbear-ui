@@ -112,6 +112,7 @@
 @mixin ellipsis($n: 2) {
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 
   @if ($n >= 2) {
     display: -webkit-box;
@@ -120,7 +121,7 @@
   }
 
   @if ($n == 1) {
-    white-space: nowrap;
+    overflow: hidden;
   }
 }
 

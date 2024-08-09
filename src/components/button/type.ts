@@ -16,15 +16,15 @@ export type ButtonType =
 
 export interface BaseButtonProps {
   // 设置按钮是否可用
-  disabled: boolean;
+  disabled?: boolean;
   // 设置按钮大小
-  size: ButtonSize;
+  size?: ButtonSize;
   // 设置按钮类型
-  type: ButtonType;
+  type?: ButtonType;
   // 设置加载状态
-  loading: boolean;
+  loading?: boolean;
   // 是否为圆形
-  circle: boolean;
+  circle?: boolean;
   // 设置按钮额外的样式
   className?: string;
   // 按钮里的子元素

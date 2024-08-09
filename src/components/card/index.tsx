@@ -6,17 +6,16 @@ import '@/styles/index.scss';
 export const Card = (props: CardProps) => {
   const prefixCls = 'xbear-card';
   const {
-    title,
-    cover,
-    className,
-    extra,
-    style,
-    shadow,
-    titleOverflowHidden,
-    actions,
-    showShadowWhenHover,
-    children,
-    // loading,
+    shadow = false,
+    showShadowWhenHover = false,
+    titleOverflowHidden = true,
+    title = undefined,
+    cover = undefined,
+    className = undefined,
+    extra = undefined,
+    style = undefined,
+    actions = undefined,
+    children = undefined,
     ...restProps
   } = props;
 
@@ -26,7 +25,6 @@ export const Card = (props: CardProps) => {
         [`${prefixCls}-shadow`]: shadow,
         [`${prefixCls}-hover`]: showShadowWhenHover,
         [`${prefixCls}-cover`]: cover,
-        // [`${prefixCls}-loading`]: loading,
       })}
       style={style}
       {...restProps}
@@ -41,7 +39,7 @@ export const Card = (props: CardProps) => {
           {title && (
             <div
               className={classnames(`${prefixCls}-header-title`, {
-                [`${prefixCls}-overflow-hidden`]: titleOverflowHidden,
+                [`${prefixCls}-header-title-overflow-hidden`]: titleOverflowHidden,
               })}
             >
               {title}

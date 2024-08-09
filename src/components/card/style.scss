@@ -12,30 +12,13 @@ $xbear-card-content-padding: 22px 20px;
   border-radius: $border-radius;
   transition: all $default-transition;
 
-  &.xbear-card-shadow {
+  &-shadow {
     box-shadow: $box-shadow;
   }
 
-  &.xbear-card-hover {
+  &-hover {
     &:hover {
       box-shadow: $box-shadow;
-    }
-  }
-
-  &.xbear-card-cover {
-    overflow: hidden;
-
-    img {
-      width: 100%;
-    }
-
-    .xbear-card-header {
-      display: block;
-      padding: 0;
-
-      &-title {
-        padding: $xbear-card-title-padding;
-      }
     }
   }
 
@@ -49,16 +32,28 @@ $xbear-card-content-padding: 22px 20px;
     font-size: $font-size-base;
     border-bottom: 1px solid $border-color;
 
+    &-cover {
+      overflow: hidden;
+      padding-right: 0.6rem;
+
+      img {
+        max-width: 2rem;
+        max-height: 2rem;
+      }
+    }
+
     &-title {
       flex: 1 1 auto;
+      word-wrap: break-word;
+      white-space: pre-wrap;
 
-      &.xbear-card-overflow-hidden {
+      &-overflow-hidden {
         @include ellipsis(1);
       }
     }
 
     &-extra {
-      flex: 0 0 15%;
+      flex: 0 0 20%;
       text-align: right;
       @include ellipsis(1);
     }
