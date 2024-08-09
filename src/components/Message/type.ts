@@ -1,5 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { ThemeProps } from '../Icon/type';
+import { ThemeProps } from '../icon/type';
 
 export interface ShowProps {
   // 文案内容

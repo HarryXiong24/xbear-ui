@@ -2,8 +2,8 @@ import React, { ReactNode, useContext } from 'react';
 import classNames from 'classnames';
 import { MenuContext } from './menu';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import Icon from '../Icon';
-import { ThemeProps } from '../Icon/type';
+import Icon from '../icon';
+import { ThemeProps } from '../icon/type';
 import './style.scss';
 import '@/styles/index.scss';
 

@@ -1,6 +1,6 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
-import { ThemeProps } from '../Icon/type';
+import { ThemeProps } from '../icon/type';
 
 export type ButtonSize = 'lg' | 'md' | 'sm';
 export type ButtonType =

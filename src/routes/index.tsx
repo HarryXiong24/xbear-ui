@@ -1,7 +1,8 @@
 import App from '@/app';
 // import Card from '@/pages/Card';
 // import Button from '@/pages/Button';
-import ErrorForward from '@/utils/error-forward';
+import ErrorPage from '@/pages/error-page';
+import Icon from '@/pages/icon';
 import { lazy } from 'react';
 
 // 懒加载组件
@@ -14,7 +15,7 @@ export const router = [
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorForward />,
+    errorElement: <ErrorPage />,
     children: [
       {
         name: 'Button',
@@ -25,6 +26,11 @@ export const router = [
         name: 'Card',
         path: '/card',
         element: <Card />,
+      },
+      {
+        name: 'Icon',
+        path: '/icon',
+        element: <Icon />,
       },
     ],
   },

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import Tabs from '@/components/Tabs';
-import Icon from '@/components/Icon';
+import Icon from '@/components/icon';
 import Card from '@/components/card';
 import { Description1, Description2, Description3 } from './poem';
 import '@/styles/example.scss';

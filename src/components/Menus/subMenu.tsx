@@ -2,10 +2,10 @@ import React, { useContext, useState, FunctionComponentElement, ReactNode } from
 import classNames from 'classnames';
 import { MenuContext } from './menu';
 import { MenuItemProps } from './menuItem';
-import Icon from '../Icon';
+import Icon from '../icon';
 import Transition from '../Transitions';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { ThemeProps } from '../Icon/type';
+import { ThemeProps } from '../icon/type';
 import './style.scss';
 import '@/styles';
 

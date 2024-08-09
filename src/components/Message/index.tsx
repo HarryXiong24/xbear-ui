@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import classNames from 'classnames';
-import Icon from '../Icon';
+import Icon from '../icon';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { ThemeProps } from '../Icon/type';
+import { ThemeProps } from '../icon/type';
 import { IconType, MessageProps, MessageType, ShowProps } from './type';
 import './style.scss';
 import '@/styles/index.scss';
