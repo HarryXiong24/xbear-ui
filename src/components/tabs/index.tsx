@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { scopedClass } from '../../utils/scoped-class';
+import { scopedClass } from '@/utils/scoped-class';
 import { TabsProps, TabItemProps } from './type';
-import './style.scss';
+import TabItem from './tab-item';
+import { TabsComponent } from './type';
 import '@/styles/index.scss';
+import './style.scss';
 
-// 生成构造作用域函数
-const scFunc = scopedClass('xbear-tabs');
+const prefixCls = 'xbear-tabs';
+const scFunc = scopedClass(prefixCls); // 生成构造作用域函数
 
-export const TabWrap = (props: TabsProps) => {
-  const { defaultIndex, className, onSelect, type, children } = props;
+export const Tabs = (
+  props: TabsProps & {
+    Item: React.FC<TabItemProps>;
+  }
+) => {
+  const { defaultIndex = 0, className = undefined, onSelect = undefined, type = 'line', children = undefined } = props;
   const [activeIndex, setActiveIndex] = useState(defaultIndex);
 
   // 点击 Tab 触发的事件
@@ -31,20 +37,23 @@ export const TabWrap = (props: TabsProps) => {
 
   // 渲染 Tab 标签
   const renderNavLinks = () => {
-    return React.Children.map(children, function (child, index) {
+    // React.Children.map: 遍历 this.props.children，返回一个新的数组，每个子节点会通过一个回调函数进行处理。
+    return React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement<TabItemProps>;
       const { label, disabled = false } = childElement.props;
-      // eslint-disable-next-line @typescript-eslint/no-shadow
       const classes = classNames(scFunc('nav-item'), {
         'is-active': activeIndex === index,
         disabled: disabled,
       });
+
       return (
         <li
           role='presentation'
           key={`nav-item-${index}`}
           className={classes}
-          onClick={() => handleItemClick(index, disabled)}
+          onClick={() => {
+            handleItemClick(index, disabled);
+          }}
         >
           {label}
         </li>
@@ -54,7 +63,7 @@ export const TabWrap = (props: TabsProps) => {
 
   // 渲染每个 Tab 里呈现的内容
   const renderContent = () => {
-    return React.Children.map(children, function (child, index) {
+    return React.Children.map(children, (child, index) => {
       if (index === activeIndex) {
         return child;
       }
@@ -69,13 +78,6 @@ export const TabWrap = (props: TabsProps) => {
   );
 };
 
-TabWrap.defaultProps = {
-  defaultIndex: 0,
-  type: 'line',
-  className: '',
-  onSelect: () => {
-    return undefined;
-  },
-};
+(Tabs as TabsComponent).Item = TabItem;
 
-export default TabWrap;
+export default Tabs as TabsComponent;

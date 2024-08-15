@@ -1,15 +1,15 @@
 import App from '@/app';
-// import Card from '@/pages/Card';
-// import Button from '@/pages/Button';
 import ErrorPage from '@/pages/error-page';
-import Icon from '@/pages/icon';
 import { lazy } from 'react';
 
-// 懒加载组件
+// eslint-disable-next-line react-refresh/only-export-components
+const Icon = lazy(() => import('@/pages/icon'));
 // eslint-disable-next-line react-refresh/only-export-components
 const Button = lazy(() => import('@/pages/button'));
 // eslint-disable-next-line react-refresh/only-export-components
 const Card = lazy(() => import('@/pages/card'));
+// eslint-disable-next-line react-refresh/only-export-components
+const Tab = lazy(() => import('@/pages/tabs'));
 
 export const router = [
   {
@@ -17,6 +17,11 @@ export const router = [
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        name: 'Icon',
+        path: '/icon',
+        element: <Icon />,
+      },
       {
         name: 'Button',
         path: '/button',
@@ -28,9 +33,9 @@ export const router = [
         element: <Card />,
       },
       {
-        name: 'Icon',
-        path: '/icon',
-        element: <Icon />,
+        name: 'Tab',
+        path: '/tab',
+        element: <Tab />,
       },
     ],
   },

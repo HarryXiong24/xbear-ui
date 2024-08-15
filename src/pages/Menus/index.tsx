@@ -1,6 +1,6 @@
 import MenusDemo from './demo';
 import MenusDoc from './doc';
-import Tabs from '@/components/Tabs';
+import Tabs from '@/components/tabs';
 
 const MenusPage = () => {
   return (

@@ -3,8 +3,9 @@ import { CardProps } from './type';
 import './style.scss';
 import '@/styles/index.scss';
 
+const prefixCls = 'xbear-card';
+
 export const Card = (props: CardProps) => {
-  const prefixCls = 'xbear-card';
   const {
     shadow = false,
     showShadowWhenHover = false,

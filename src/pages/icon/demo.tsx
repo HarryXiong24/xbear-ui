@@ -4,7 +4,7 @@ import { ThemeProps } from '@/components/icon/type';
 import iconsCache from '@/components/icon/shared/res';
 import copy from 'copy-to-clipboard';
 import Message from '@/components/Message';
-import Tabs from '@/components/Tabs';
+import Tabs from '@/components/tabs';
 import '@/styles/_example.scss';
 
 // Icon 构造器
@@ -38,7 +38,6 @@ const BuildIcons: React.FC<{ theme: ThemeProps; icons: any }> = ({ theme, icons 
             return (
               <li
                 role='presentation'
-                className='svgCls'
                 style={{
                   display: 'inline-flex',
                   flexDirection: 'row',
@@ -50,12 +49,19 @@ const BuildIcons: React.FC<{ theme: ThemeProps; icons: any }> = ({ theme, icons 
                 }}
                 onClick={() => {
                   copy(iconName);
-                  // console.log(iconName);
                   void Message.success({ content: '复制成功' });
                 }}
                 key={index}
               >
-                <Icon theme={theme} icon={iconName} />
+                <Icon
+                  theme={theme}
+                  icon={iconName}
+                  style={{
+                    width: 24,
+                    height: 24,
+                    marginRight: 10,
+                  }}
+                />
                 <div
                   style={{
                     color: '#666',

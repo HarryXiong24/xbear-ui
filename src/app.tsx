@@ -1,10 +1,10 @@
+import { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Menu from './components/Menus/menu';
 import Logo from './assets/logo.svg';
 import { sider } from './routes';
 import MenuItem from './components/Menus/menuItem';
 import './app.scss';
-import { useEffect } from 'react';
 
 const App = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    navigate('/button');
+    navigate('/icon');
   }, [navigate]);
 
   return (
