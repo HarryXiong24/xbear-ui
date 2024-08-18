@@ -23,6 +23,7 @@ const Transition = (props: TransitionProps) => {
     </CSSTransition>
   );
 };
+
 Transition.defaultProps = {
   unmountOnExit: true,
   appear: true,

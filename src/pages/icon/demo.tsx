@@ -3,7 +3,7 @@ import Icon from '@/components/icon';
 import { ThemeProps } from '@/components/icon/type';
 import iconsCache from '@/components/icon/shared/res';
 import copy from 'copy-to-clipboard';
-import Message from '@/components/Message';
+import Message from '@/components/message';
 import Tabs from '@/components/tabs';
 import '@/styles/_example.scss';
 

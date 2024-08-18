@@ -1,15 +1,5 @@
 import App from '@/app';
-import ErrorPage from '@/pages/error-page';
-import { lazy } from 'react';
-
-// eslint-disable-next-line react-refresh/only-export-components
-const Icon = lazy(() => import('@/pages/icon'));
-// eslint-disable-next-line react-refresh/only-export-components
-const Button = lazy(() => import('@/pages/button'));
-// eslint-disable-next-line react-refresh/only-export-components
-const Card = lazy(() => import('@/pages/card'));
-// eslint-disable-next-line react-refresh/only-export-components
-const Tab = lazy(() => import('@/pages/tabs'));
+import { ErrorPage, Icon, Button, Card, Tab, Message } from './components';
 
 export const router = [
   {
@@ -36,6 +26,11 @@ export const router = [
         name: 'Tab',
         path: '/tab',
         element: <Tab />,
+      },
+      {
+        name: 'Message',
+        path: '/message',
+        element: <Message />,
       },
     ],
   },
