@@ -1,10 +1,7 @@
 import { useRef } from 'react';
-import Tabs from '@/components/tabs';
-import Icon from '@/components/icon';
-import Card from '@/components/card';
-import Button from '@/components/button';
+import { Tabs, Icon, Card, Button } from '@/components';
 import { Description1, Description2, Description3 } from './poem';
-import '@/styles/_example.scss';
+import '@/styles/index.scss';
 
 const TabsDemo = () => {
   const tabItemRef = useRef(null);

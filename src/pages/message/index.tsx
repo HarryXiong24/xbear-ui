@@ -1,6 +1,6 @@
 import MessageDemo from './demo';
 import MessageDoc from './doc';
-import Tabs from '@/components/tabs';
+import { Tabs } from '@/components';
 
 const MessagePage = () => {
   return (

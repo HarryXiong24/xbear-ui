@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-import Icon from '@/components/icon';
-import { ThemeProps } from '@/components/icon/type';
-import iconsCache from '@/components/icon/shared/res';
 import copy from 'copy-to-clipboard';
-import Message from '@/components/message';
-import Tabs from '@/components/tabs';
-import '@/styles/_example.scss';
+import { Message, Tabs, Icon, ThemeProps } from '@/components';
+import iconsCache from '@/components/ui/icon/shared/res';
+import '@/styles/index.scss';
 
 // Icon 构造器
 const BuildIcons: React.FC<{ theme: ThemeProps; icons: any }> = ({ theme, icons }) => {

@@ -1,6 +1,6 @@
 import IconDemo from './demo';
 import IconDoc from './doc';
-import Tabs from '@/components/tabs';
+import { Tabs } from '@/components';
 
 const IconPage = () => {
   return (

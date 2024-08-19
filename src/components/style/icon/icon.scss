@@ -1,0 +1,11 @@
+@each $key, $val in $theme-colors {
+  .icon-#{$key} {
+    color: $val;
+  }
+}
+
+.xbear-icon {
+  &-loading {
+    animation: xbear-rotate 1s linear infinite;
+  }
+}

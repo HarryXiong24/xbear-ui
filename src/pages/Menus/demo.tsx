@@ -1,8 +1,8 @@
-import Card from '@/components/card';
+import Card from '@/components/ui/card';
 import '@/styles/example.scss';
-import Menu from '@/components/Menus/menu';
-import MenuItem from '@/components/Menus/menuItem';
-import SubMenu from '@/components/Menus/subMenu';
+import Menu from '@/components/ui/Menus/menu';
+import MenuItem from '@/components/ui/Menus/menuItem';
+import SubMenu from '@/components/ui/Menus/subMenu';
 
 const MenusDemo = () => {
   const cardCss = { margin: '20px 20px 0 0' };

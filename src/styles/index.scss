@@ -1,68 +1,67 @@
-// config
-@import 'variables';
+@import './example';
+@import './markdown';
+@import '../components/style/index.scss';
 
-// layout
-@import 'reboot';
+.app {
+  background: #fff;
+  height: 100vh;
 
-// mixin
-@import 'mixin';
+  .header {
+    background-color: white;
+    border-bottom: 1px solid $g08;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-// animation
-@import 'animation';
+    .icon {
+      height: 2.2rem;
+      pointer-events: none;
+      font-weight: 600;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
 
-// // button
-// @import "../components/Button/style";
+    .title {
+      color: $gray-900;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0;
+      span {
+        color: $indigo;
+        font-weight: 500;
+      }
+    }
 
-// // alert
-// @import "../components/Alerts/style";
+    @media (prefers-reduced-motion: no-preference) {
+      .icon {
+        animation: App-logo-spin infinite 20s linear;
+      }
+    }
+  }
 
-// // menu
-// @import '../components/Menus/style';
+  .container {
+    display: flex;
+    .sider {
+      width: 10rem;
+      height: calc(100vh - 3rem);
+    }
+    .content {
+      padding: 16px;
+      margin-bottom: 10;
+      height: calc(100vh - 3rem);
+      overflow-y: scroll;
+      width: 100%;
+    }
+  }
 
-// // icon
-// @import '../components/Icon/style';
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
 
-// // input
-// @import "../components/Input/style";
-
-// // autoComponent
-// @import "../components/AutoComplete/style";
-
-// // Select
-// @import "../components/Select/style";
-
-// // Progress
-// @import "../components/Progress/style";
-
-// // Tabs
-// @import "../components/Tabs/style";
-
-// // DatePicker
-// @import "../components/Calendar/style";
-
-// // Tree
-// @import "../components/Tree/style";
-
-// // Checkbox
-// @import "../components/Checkbox/style";
-
-// // InputDatePicker
-// @import "../components/InputDatePicker/style";
-
-// // DropdownButton
-// // @import "../components/DropdownButton/style";
-
-// // Modal
-// @import "../components/Modal/style";
-
-// // Card
-// @import "../components/Card/style";
-
-// // Pagination
-// @import "../components/Pagination/style";
-
-// // Message
-// @import "../components/Message/style";
-
-// // Table
-// @import "../components/Table/style";
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

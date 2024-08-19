@@ -1,7 +1,5 @@
-import Card from '@/components/card';
-import { Message } from '@/components/message';
-import Button from '@/components/button';
-import '@/styles/_example.scss';
+import { Card, Button, Message } from '@/components';
+import '@/styles/index.scss';
 
 const MessageDemo = () => {
   const cardCss = { margin: '20px 20px 0 0' };

@@ -1,9 +1,9 @@
 import ReactMarkdown from 'react-markdown';
-import Card from '@/components/card';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
 import MessageMD from './message.md';
-import '@/styles/_markdown.scss';
+import { Card } from '@/components';
+import '@/styles/index.scss';
 
 const MessageDoc = () => {
   return (

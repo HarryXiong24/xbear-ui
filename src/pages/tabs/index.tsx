@@ -1,6 +1,6 @@
 import TabsDemo from './demo';
 import TabsDoc from './doc';
-import Tabs from '@/components/tabs';
+import { Tabs } from '@/components';
 
 const TabsPage = () => {
   return (

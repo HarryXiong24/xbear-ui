@@ -1,9 +1,9 @@
 import ReactMarkdown from 'react-markdown';
-import Card from '@/components/card';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
 import IconMD from './Icon.md';
-import '@/styles/_markdown.scss';
+import { Card } from '@/components';
+import '@/styles/index.scss';
 
 const IconDoc = () => {
   return (

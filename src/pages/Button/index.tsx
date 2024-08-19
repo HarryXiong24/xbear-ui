@@ -1,4 +1,4 @@
-import Tabs from '@/components/tabs';
+import { Tabs } from '@/components';
 import ButtonDemo from './demo';
 import ButtonDoc from './doc';
 

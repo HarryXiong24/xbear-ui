@@ -1,7 +1,6 @@
-import Card from '@/components/card';
-import Button from '@/components/button';
+import { Card, Button } from '@/components';
 import Logo from './demo.svg';
-import '@/styles/_example.scss';
+import '@/styles/index.scss';
 
 const CardDemo = () => {
   const cardCss = { margin: '16px 16px', minWidth: '30%' };

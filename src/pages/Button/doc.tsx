@@ -1,9 +1,9 @@
-import Card from '@/components/card';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
+import { Card } from '@/components';
 import ButtonMD from './button.md';
-import '@/styles/_markdown.scss';
+import '@/styles/index.scss';
 
 const ButtonDoc = () => {
   return (

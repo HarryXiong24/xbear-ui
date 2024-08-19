@@ -1,4 +1,4 @@
-import Tabs from '@/components/tabs';
+import { Tabs } from '@/components';
 import CardDemo from './demo';
 import CardDoc from './doc';
 

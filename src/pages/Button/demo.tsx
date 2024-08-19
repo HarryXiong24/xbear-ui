@@ -1,8 +1,6 @@
 import { useRef, useState } from 'react';
-import Button from '@/components/button';
-import Card from '@/components/card';
-import { ButtonSize } from '@/components/button/type';
-import '@/styles/_example.scss';
+import { Button, Card, ButtonSize } from '@/components';
+import '@/styles/index.scss';
 
 const sizeMap: Record<number, ButtonSize> = {
   0: 'sm',
