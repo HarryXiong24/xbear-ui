@@ -26,8 +26,9 @@
   &:focus,
   &.focus {
     color: $hover-color;
-    background: lighten($hover-background, 7.5%);
+    background: darken($hover-background, 7.5%);
     border-color: lighten($hover-border, 10%);
+    box-shadow: 0 0 0 0.3rem rgba($border, 0.2);
   }
 
   &:disabled,

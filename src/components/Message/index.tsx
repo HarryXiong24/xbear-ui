@@ -1,34 +1,35 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import { createPortal } from 'react-dom';
 import classNames from 'classnames';
 import Icon from '../icon';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { ThemeProps } from '../icon/type';
-import { IconType, MessageProps, MessageType, ShowProps } from './type';
+import { IconType, MessageComponentProps, MessageType, MessageProps } from './type';
 import './style.scss';
 import '@/styles/index.scss';
 
+// 获取对应的图标类型
+const getIconType = (icon_type: string) => {
+  switch (icon_type) {
+    case IconType.SUCCESS:
+      return { icon: 'check-circle', theme: 'success' };
+    case IconType.INFO:
+      return { icon: 'info-circle', theme: 'primary' };
+    case IconType.WARNING:
+      return { icon: 'exclamation-circle', theme: 'warning' };
+    case IconType.LOADING:
+      return { icon: 'spinner', theme: 'primary' };
+    case IconType.ERROR:
+      return { icon: 'times-circle', theme: 'danger' };
+    default:
+      return { icon: 'check-circle', theme: 'success' };
+  }
+};
+
 export function Message(props: MessageProps) {
   const prefixCls = 'xbear-message';
-  const { visible, children, icon, theme, type } = props;
-
-  // 获取对应的图标类型
-  const getIconType = (icon_type: string) => {
-    switch (icon_type) {
-      case IconType.SUCCESS:
-        return { icon: 'check-circle', theme: 'success' };
-      case IconType.INFO:
-        return { icon: 'info-circle', theme: 'primary' };
-      case IconType.WARNING:
-        return { icon: 'exclamation-circle', theme: 'warning' };
-      case IconType.LOADING:
-        return { icon: 'spinner', theme: 'primary' };
-      case IconType.ERROR:
-        return { icon: 'times-circle', theme: 'danger' };
-      default:
-        return { icon: 'check-circle', theme: 'success' };
-    }
-  };
+  const { visible, children = undefined, icon = undefined, theme = undefined, type = 'info' } = props;
 
   // 返回的渲染元素
   const result = (
@@ -62,53 +63,59 @@ export function Message(props: MessageProps) {
    * 第二个参数（container）是一个 DOM 元素。
    */
   // 将 result 渲染在 document.body 上
-  return ReactDom.createPortal(result, document.body);
+  return createPortal(result, document.body);
 }
 
 // 渲染 Message 的函数
-const renderELement = (type: MessageType, props: ShowProps) => {
+const renderELement = (type: MessageType, props: MessageComponentProps) => {
   const { onClose, duration = 1, content, icon } = props;
-  const result = (
+
+  // prepare dom
+  const wrapDiv = document.createElement('div');
+  const MessageComponent = (
     <Message visible icon={icon} type={type}>
       {content}
     </Message>
   );
-  const div = document.createElement('div');
+  const root = ReactDOM.createRoot(wrapDiv);
+
+  // 关闭 Message
   const close = () => {
-    ReactDom.render(React.cloneElement(result, { visible: false }), div);
+    root.render(React.cloneElement(MessageComponent, { visible: false })); // 隐藏
     setTimeout(() => {
-      ReactDom.unmountComponentAtNode(div);
-      div.remove();
+      root.unmount(); // 销毁
+      wrapDiv.remove(); // 移除
+      onClose && onClose(); // 执行 onClose 回调
     }, 500); // 等待动画执行完再销毁
   };
-  ReactDom.render(result, div);
+
+  root.render(MessageComponent);
+
   return new Promise((resolve) => {
-    const timer = setTimeout(() => {
-      close();
-      onClose && onClose();
-      clearTimeout(timer);
+    setTimeout(() => {
+      close(); // 关闭
       return resolve(null);
     }, duration * 1000);
   });
 };
 
-Message.success = (props: ShowProps) => {
+Message.success = (props: MessageComponentProps) => {
   return renderELement('success', props);
 };
 
-Message.info = (props: ShowProps) => {
+Message.info = (props: MessageComponentProps) => {
   return renderELement('info', props);
 };
 
-Message.warning = (props: ShowProps) => {
+Message.warning = (props: MessageComponentProps) => {
   return renderELement('warning', props);
 };
 
-Message.loading = (props: ShowProps) => {
+Message.loading = (props: MessageComponentProps) => {
   return renderELement('loading', props);
 };
 
-Message.error = (props: ShowProps) => {
+Message.error = (props: MessageComponentProps) => {
   return renderELement('error', props);
 };
 

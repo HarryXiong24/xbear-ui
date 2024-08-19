@@ -1,7 +1,8 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { ThemeProps } from '../icon/type';
+import { ReactNode } from 'react';
 
-export interface ShowProps {
+export interface MessageComponentProps {
   // 文案内容
   content: string;
   // 持续时间
@@ -16,7 +17,7 @@ export type MessageType = 'success' | 'info' | 'warning' | 'loading' | 'error';
 
 export interface MessageProps {
   visible: boolean;
-  children: React.ReactChild;
+  children: ReactNode;
   // 类型
   type: MessageType;
   // 添加图标

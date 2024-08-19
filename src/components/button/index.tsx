@@ -18,8 +18,14 @@ export const Button = (props: ButtonProps) => {
     href = undefined,
     icon = undefined,
     theme = undefined,
+    onMouseUp,
     ...restProps
   } = props;
+
+  const handleMouseUp = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    event.currentTarget.blur(); // 鼠标点击后移除焦点
+    onMouseUp && onMouseUp(event);
+  };
 
   const classes = classNames(prefixCls, className, {
     [`${prefixCls}-${type as ButtonType}`]: type,
@@ -39,13 +45,13 @@ export const Button = (props: ButtonProps) => {
     );
   } else if (circle) {
     return (
-      <button className={classes} disabled={disabled} {...restProps}>
+      <button className={classes} disabled={disabled} {...restProps} onMouseUp={handleMouseUp}>
         <Icon icon={icon!} theme={theme} style={{ width: '1rem', height: '1rem' }} />
       </button>
     );
   } else {
     return (
-      <button className={classes} disabled={disabled} {...restProps}>
+      <button className={classes} disabled={disabled} {...restProps} onMouseUp={handleMouseUp}>
         {loading ? (
           <Icon icon='spinner' theme={theme} style={{ marginRight: 5 }} />
         ) : icon ? (
