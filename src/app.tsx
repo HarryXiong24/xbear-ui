@@ -22,7 +22,7 @@ const App = () => {
       <header className='header'>
         <img src={Logo} className='icon' alt='logo' />
         <p className='title'>
-          <span>T</span>aurus <span>UI</span>
+          <span>X</span>bear <span>UI</span>
         </p>
       </header>
 

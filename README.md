@@ -1,30 +1,60 @@
-# React + TypeScript + Vite
+<h1 align="center">Welcome to Xbear-UI 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/HarryXiong24/xbear-ui/blob/master/README.md" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/HarryXiong24/xbear-ui/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A UI components built with React Hooks & Typescript.
 
-Currently, two official plugins are available:
+### 🏠 [Homepage](https://github.com/HarryXiong24/xbear-ui)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Install
 
-## Expanding the ESLint configuration
+```sh
+pnpm install
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+npm install
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json", "./tsconfig.app.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
+yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+```sh
+pnpm run dev
+
+npm run dev
+
+yarn dev
+```
+
+## Run tests
+
+```sh
+pnpm run test
+
+npm run test
+
+yarn test
+```
+
+## Author
+
+👤 **Harry Xiong**
+
+- Website: <https://harryxiong24.github.io/>
+- Github: [@harryxiong24](https://github.com/harryxiong24)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+Copyright © 2021 [Harry Xiong](https://github.com/harryxiong24).<br />
+This project is [MIT](https://github.com/HarryXiong24/xbear-ui/blob/main/LICENSE) licensed.
