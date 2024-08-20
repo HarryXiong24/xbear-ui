@@ -1,5 +1,5 @@
 import App from '@/app';
-import { ErrorPage, Icon, Button, Card, Tab, Message } from './components';
+import { ErrorPage, Icon, Button, Card, Tab, Message, Menus } from './components';
 
 export const router = [
   {
@@ -31,6 +31,11 @@ export const router = [
         name: 'Message',
         path: '/message',
         element: <Message />,
+      },
+      {
+        name: 'Menus',
+        path: '/menus',
+        element: <Menus />,
       },
     ],
   },

@@ -7,3 +7,4 @@ export const Button = lazy(() => import('@/pages/button'));
 export const Card = lazy(() => import('@/pages/card'));
 export const Tab = lazy(() => import('@/pages/tabs'));
 export const Message = lazy(() => import('@/pages/message'));
+export const Menus = lazy(() => import('@/pages/menus'));

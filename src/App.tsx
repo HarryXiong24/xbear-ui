@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import Menu from './components/ui/Menus/menu';
-import Logo from './assets/logo.svg';
+import { Menu, MenuItem } from './components';
 import { sider } from './routes';
-import MenuItem from './components/ui/Menus/menuItem';
+import Logo from './assets/logo.svg';
 import '@/styles/index.scss';
 
 const App = () => {

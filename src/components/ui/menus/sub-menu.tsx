@@ -1,28 +1,9 @@
-import React, { useContext, useState, FunctionComponentElement, ReactNode } from 'react';
+import React, { useContext, useState, FunctionComponentElement } from 'react';
 import classNames from 'classnames';
-import { MenuContext } from './menu';
-import { MenuItemProps } from './menuItem';
+import { MenuContext } from '.';
 import Icon from '../icon';
 import Transition from '../../util/transitions';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { ThemeProps } from '../icon/type';
-import './style.scss';
-import '@/styles';
-
-export interface SubMenuProps {
-  index?: string;
-  title: string;
-  className?: string;
-  /**
-   * 添加图标到标题后
-   */
-  icon?: IconProp;
-  /**
-   * 图标主题
-   */
-  theme?: ThemeProps;
-  children?: ReactNode;
-}
+import { MenuItemProps, SubMenuProps } from './type';
 
 const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className, icon, theme }) => {
   const context = useContext(MenuContext);
@@ -99,4 +80,5 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className, ic
 };
 
 SubMenu.displayName = 'SubMenu';
+
 export default SubMenu;

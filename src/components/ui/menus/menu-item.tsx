@@ -1,27 +1,8 @@
-import React, { ReactNode, useContext } from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
-import { MenuContext } from './menu';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { MenuContext } from '.';
 import Icon from '../icon';
-import { ThemeProps } from '../icon/type';
-import './style.scss';
-import '@/styles/index.scss';
-
-export interface MenuItemProps {
-  index?: string;
-  disabled?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-  /**
-   * 添加图标到标题后
-   */
-  icon?: IconProp;
-  /**
-   * 图标主题
-   */
-  theme?: ThemeProps;
-  children?: ReactNode;
-}
+import { MenuItemProps } from './type';
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
   const { index, disabled, className, style, children, icon, theme } = props;
@@ -46,4 +27,5 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
 };
 
 MenuItem.displayName = 'MenuItem';
+
 export default MenuItem;

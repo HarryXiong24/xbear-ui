@@ -1,12 +1,7 @@
-# Menus
+import { ReactNode } from 'react';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { ThemeProps } from '../icon/type';
 
----
-
-## API
-
-## 类型声明
-
-```ts
 export type MenuMode = 'horizontal' | 'vertical';
 
 export interface SubMenuProps {
@@ -49,4 +44,3 @@ export type MenuComponent = React.FC<MenuProps> & {
   Item: React.FC<MenuItemProps>;
   SubMenu: React.FC<SubMenuProps>;
 };
-```

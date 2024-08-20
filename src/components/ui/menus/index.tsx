@@ -1,31 +1,27 @@
-import React, { createContext, ReactNode, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import classNames from 'classnames';
-import { MenuItemProps } from './menuItem';
-import './style.scss';
-import '@/styles/index.scss';
+import { MenuComponent, MenuContextType, MenuItemProps, MenuProps, SubMenuProps } from './type';
+import MenuItem from './menu-item';
+import SubMenu from './sub-menu';
 
-type MenuMode = 'horizontal' | 'vertical';
-export interface MenuProps {
-  defaultIndex?: string;
-  className?: string;
-  mode?: MenuMode;
-  style?: React.CSSProperties;
-  onSelect?: (selectedIndex: string) => void;
-  defaultOpenSubMenus?: string[];
-  children?: ReactNode;
-}
+export const MenuContext = createContext<MenuContextType>({ index: '0' });
 
-interface IMenuContext {
-  index: string;
-  onSelect?: (selectIndex: string) => void;
-  mode?: MenuMode;
-  defaultOpenSubMenus?: string[];
-}
+export const Menu = (
+  props: MenuProps & {
+    Item: React.FC<MenuItemProps>;
+    SubMenu: React.FC<SubMenuProps>;
+  }
+) => {
+  const {
+    className,
+    mode = 'horizontal',
+    style,
+    children,
+    defaultIndex = '0',
+    onSelect,
+    defaultOpenSubMenus = [],
+  } = props;
 
-export const MenuContext = createContext<IMenuContext>({ index: '0' });
-
-export const Menu = (props: MenuProps) => {
-  const { className, mode, style, children, defaultIndex, onSelect, defaultOpenSubMenus } = props;
   const [currentActive, setActive] = useState(defaultIndex);
 
   const classes = classNames('xbear-menu', className, {
@@ -37,7 +33,7 @@ export const Menu = (props: MenuProps) => {
     setActive(index);
     onSelect && onSelect(index);
   };
-  const passedContext: IMenuContext = {
+  const passedContext: MenuContextType = {
     index: currentActive ? currentActive : '0',
     onSelect: handleClick,
     mode,
@@ -64,10 +60,7 @@ export const Menu = (props: MenuProps) => {
   );
 };
 
-Menu.defaultProps = {
-  defaultIndex: '0',
-  mode: 'horizontal',
-  defaultOpenSubMenus: [],
-};
+(Menu as MenuComponent).Item = MenuItem;
+(Menu as MenuComponent).SubMenu = SubMenu;
 
-export default Menu;
+export default Menu as MenuComponent;
